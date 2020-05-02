@@ -1,1 +1,19 @@
-<h1>WOW YOU FINALLY MADE IT TO HAMISI'S FLASK BOILER PLATE CODE</h1>
+{% extends 'base.html' %}
+
+
+
+{% block styles %}
+
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    
+
+{% endblock %}
