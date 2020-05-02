@@ -21,7 +21,7 @@ def login():
 
     title = 'Loginpage'
 
-    return render_template('login.html' title = title , login_form =form)
+    return render_template('login.html' ,title = title , login_form =form)
 
 
 @auth.route('/register',methods = ["GET","POST"])
@@ -33,7 +33,8 @@ def register():
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('auth.login'))
-        title = "New Account"
+
+    title = "New Account"
 
     return render_template('register.html',registration_form = form , title = title)
 
