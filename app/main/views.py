@@ -6,6 +6,7 @@ from flask_login import login_required
 def index():
     title = 'Hello World'
     return render_template('index.html', title = title)
+    
 
 @main.route("/pitch" ,methods=["GET", "POST"])
 @login_required
