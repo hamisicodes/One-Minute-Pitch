@@ -47,3 +47,13 @@ def profile(id):
     title = f'{user.username}'
 
     return render_template("profile.html", user=user , pitches = pitches , title = title)
+
+@main.route('/vote' ,methods=["GET", "POST"])
+def vote():
+    if 'like' in request.form:
+        pass
+    elif 'Dislike' in request.form:
+        pass
+
+    return render_template('pitches.html')
+
