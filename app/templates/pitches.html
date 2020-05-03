@@ -27,21 +27,25 @@
     </div>
     <br><br><br>
     <div class="row">
-
-        <div class="col-md-4">
+        {% for pitch in pitches %}
+        <div class="col-md-6">
+           
 
             <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat lacinia eleifend.</p>
-                <footer>Full name <cite title="Source Title">website</cite></footer>
+                <p>{{ pitch.description }}</p>
+                <footer>posted by: <cite title="Source Title">{{ pitch.user.username }}</cite></footer>
             </blockquote>
             <button type="button" class="btn btn-light"> <i class="fa fa-thumbs-up"
-                    style="font-size:24px; color:blue"></i>0</button><span class="tab" style="display:inline-block ; margin-left:40px"></span>
+                    style="font-size:14px; color:blue"></i>0</button><span class="tab" style="display:inline-block ; margin-left:40px"></span>
 
             <button type="button" class="btn btn-light"><i class="fa fa-thumbs-down"
-                    style="font-size:24px; color:rgb(182, 20, 60)"></i>0</button><span class="tab" style="display:inline-block ; margin-left:40px"></span>
+                    style="font-size:14px; color:rgb(182, 20, 60)"></i>0</button><span class="tab" style="display:inline-block ; margin-left:40px"></span>
 
-            <button type="button" class="btn btn-light"> <i class='far fa-comment-dots' style='font-size:24px'></i></button>
-        </div>
+            <button type="button" class="btn btn-light"> <i class='far fa-comment-dots' style='font-size:14px'></i></button> <br><br><br>
+            
+        </div> 
+        {% endfor %}
+        
 
     </div>
 </div>
