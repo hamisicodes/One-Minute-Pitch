@@ -35,3 +35,13 @@ def pitch():
   
 
     return render_template("pitches.html" ,pitches = pitches)
+
+@main.route('/user/<int:id>')
+def profile(id):
+    user = User.query.filter_by(id=id).first()
+    pitches = Pitch.query.filter_by(user_id = id).all()
+
+    if user is None:
+        abort(404)
+
+    return render_template("profile.html", user=user , pitches = pitches)
