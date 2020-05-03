@@ -6,7 +6,7 @@ from .. import db
 
 @main.route('/')
 def index():
-    title = 'Hello World'
+    title = 'Welcome'
     return render_template('index.html', title = title)
 
 
@@ -44,4 +44,6 @@ def profile(id):
     if user is None:
         abort(404)
 
-    return render_template("profile.html", user=user , pitches = pitches)
+    title = f'{user.username}'
+
+    return render_template("profile.html", user=user , pitches = pitches , title = title)
