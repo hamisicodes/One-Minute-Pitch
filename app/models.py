@@ -43,6 +43,13 @@ class Pitch(db.Model):
     upvotes = db.Column(db.Integer)
     downvotes = db.Column(db.Integer)
     user_id = db.Column(db.Integer , db.ForeignKey('users.id'))
+
+
+    def save_pitch(self):
+        def save_review(self):
+            db.session.add(self)
+            db.session.commit()
+
     
 
     def __repr__(self):

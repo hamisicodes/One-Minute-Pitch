@@ -1,6 +1,7 @@
 from . import main
 from flask import render_template,request,redirect
 from flask_login import login_required
+from .. models import User
 
 @main.route('/')
 def index():
@@ -17,7 +18,8 @@ def pitch():
 
         pitch = req.get('pitch')
 
-        return redirect(request.url)
+
+        # return redirect(request.url)
 
 
 
