@@ -50,6 +50,12 @@ class Pitch(db.Model):
             db.session.add(self)
             db.session.commit()
 
+    @classmethod
+    def get_pitches(cls):
+        pitches = Pitch.query.all()
+        return pitches
+
+
     
 
     def __repr__(self):

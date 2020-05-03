@@ -17,6 +17,8 @@ def pitch():
         print(req)
 
         pitch = req.get('pitch')
+        new_pitch = Pitch(description = pitch , user = current_user)
+        new_pitch.save_pitch()
 
 
         # return redirect(request.url)

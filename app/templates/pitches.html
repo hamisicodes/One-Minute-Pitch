@@ -1,22 +1,48 @@
 {% extends 'base.html' %}
 {% block title %}pitch{% endblock %}
 
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+{% endblock %}
+
 {% block content %}
 
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-md-4">
             <form action=" {{url_for('main.pitch')}} " method="POST">
 
                 <div class="form-group">
-                    
-                    <input type="text" class="form-control" id="pitch" name="pitch"
-                        placeholder="whats on your mind?" required>
+
+                    <input type="text" class="form-control" id="pitch" name="pitch" placeholder="whats on your mind?"
+                        required>
                 </div>
                 <button type="submit" class="btn btn-primary">POST</button>
 
             </form>
         </div>
+
+    </div>
+    <br><br><br>
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat lacinia eleifend.</p>
+                <footer>Full name <cite title="Source Title">website</cite></footer>
+            </blockquote>
+            <button type="button" class="btn btn-light"> <i class="fa fa-thumbs-up"
+                    style="font-size:24px; color:blue"></i>0</button><span class="tab" style="display:inline-block ; margin-left:40px"></span>
+
+            <button type="button" class="btn btn-light"><i class="fa fa-thumbs-down"
+                    style="font-size:24px; color:rgb(182, 20, 60)"></i>0</button><span class="tab" style="display:inline-block ; margin-left:40px"></span>
+
+            <button type="button" class="btn btn-light"> <i class='far fa-comment-dots' style='font-size:24px'></i></button>
+        </div>
+
     </div>
 </div>
 
