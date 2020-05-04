@@ -4,11 +4,11 @@ from app import db
 
 
 class TestUserModel(unittest.TestCase):
-    def setUp()
+    def setUp(self):
         self.new_user = User(password = 'orange')
 
     def test_password_setter(self):
-        self.assertTrue(self.pass_secure is not  None)
+        self.assertTrue(  self.new_user.pass_secure is not  None)
 
     def test_no_access_password(self):
         with self.assertRaises(AttributeError):
