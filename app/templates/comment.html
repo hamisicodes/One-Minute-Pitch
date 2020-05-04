@@ -24,7 +24,20 @@
             </form>
         </div>
 
+    </div><br><br>
+    <div class="row">
+        {% for comment in comments %}
+        <div class="col">
+            <blockquote>
+                <p>{{ comment.description }}</p>
+                <footer>comment by: <cite title="Source Title">{{ comment.user.username }}</cite></footer>
+            </blockquote>
+        </div> 
+        {% endfor %}
+        
+
     </div>
+
     <br><br><br>
 </div>
 

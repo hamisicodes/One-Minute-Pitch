@@ -51,18 +51,23 @@ def profile(id):
 
 @main.route('/comment/<int:id>', methods=["GET", "POST"])
 def comment(id):
-    
-    req = request.form
-    print(req)
-
-    pitch = req.get('pitch')
-
+    comments = Comment.query.filter_by(pitch_id = id)
     post = Pitch.query.filter_by(id=id).first()
-    # comment = Comment(description = req , pitch = post , user = current_user)
+    if request.method == 'POST':
+            req = request.form
+            print(req)
+
+            pitch = req.get('comment')
+            comment = Comment(description = pitch , user = current_user , pitch = post)
+
+            db.session.add(comment)
+            db.session.commit()
+
+            
 
    
     title = 'comments'
-    return render_template("comment.html" ,title = title , pitch = post)
+    return render_template("comment.html" ,title = title , pitch = post , comments = comments)
 
 
 
