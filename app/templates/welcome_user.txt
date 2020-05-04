@@ -1,0 +1,6 @@
+Hello {{user.username}}
+Welcome to the PITCH APP , A web application where you can create yur own pitch and users can view and comment on your pitch.
+for any problem you can contact the developer directly at ngaohamisi@gmail.com
+
+enjoy,
+Hamisi Ngao (Developer of the PITCH APP)

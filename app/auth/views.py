@@ -7,6 +7,7 @@ from flask_login import login_user,login_required,logout_user
 from ..email import mail_message
 
 @auth.route('/login',methods=['GET','POST'])
+@login_required
 def login():
     form = LoginForm()
     if form.validate_on_submit():
