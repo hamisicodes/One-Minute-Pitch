@@ -14,7 +14,7 @@ def login():
             login_user(user,form.remember.data)
             return redirect(request.args.get('next') or url_for('main.index'))
 
-        flash('Invalid username or Password')
+        flash('Invalid email or Password')
 
 
 
