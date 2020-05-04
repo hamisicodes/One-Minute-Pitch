@@ -1,7 +1,7 @@
 from . import main
 from flask import render_template,request,redirect
 from flask_login import login_required,current_user
-from .. models import User,Pitch
+from .. models import User,Pitch,Comment
 from .. import db
 
 @main.route('/')
@@ -47,6 +47,22 @@ def profile(id):
     title = f'{user.username}'
 
     return render_template("profile.html", user=user , pitches = pitches , title = title)
+
+
+@main.route('/comment/<int:id>', methods=["GET", "POST"])
+def comment(id):
+    
+    req = request.form
+    print(req)
+
+    pitch = req.get('pitch')
+
+    post = Pitch.query.filter_by(id=id).first()
+    # comment = Comment(description = req , pitch = post , user = current_user)
+
+   
+    title = 'comments'
+    return render_template("comment.html" ,title = title , pitch = post)
 
 
 

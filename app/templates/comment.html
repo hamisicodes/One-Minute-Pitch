@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}title{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form action="{{url_for('main.comment', id = pitch.id)}}" method="POST">
+
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">"" {{pitch.description }}. ""</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <input type="text" class="form-control" id="comment" name="comment"
+                        placeholder="add a comment for this pitch" required>
+                </div>
+                <button type="submit" class="btn btn-primary">COMMENT</button>
+
+            </form>
+        </div>
+
+    </div>
+    <br><br><br>
+</div>
+
+{% endblock %}

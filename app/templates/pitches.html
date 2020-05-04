@@ -41,7 +41,7 @@
             <button type="button" class="btn btn-light"><i class="fa fa-thumbs-down"
                     style="font-size:14px; color:rgb(182, 20, 60)"></i>0</button><span class="tab" style="display:inline-block ; margin-left:40px"></span>
 
-            <button type="button" class="btn btn-light"> <i class='far fa-comment-dots' style='font-size:14px'></i></button> <br><br><br>
+            <a href="{{url_for('main.comment', id = pitch.id)}}"><button type="button" class="btn btn-light"> <i class='far fa-comment-dots' style='font-size:14px'></i></button></a> <br><br><br>
             
         </div> 
         {% endfor %}
