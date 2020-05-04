@@ -27,13 +27,6 @@ def pitch():
         pitches = Pitch.query.all()
 
         
-        
-
-        # return redirect(request.url)
-       
-
-  
-
     return render_template("pitches.html" ,pitches = pitches)
 
 @main.route('/user/<int:id>')
