@@ -7,7 +7,7 @@ from flask_login import login_user,login_required,logout_user
 from ..email import mail_message
 
 @auth.route('/login',methods=['GET','POST'])
-@login_required
+
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -21,7 +21,7 @@ def login():
 
 
 
-    title = 'Loginpage'
+    title = 'Login page'
 
     return render_template('login.html' ,title = title , login_form =form)
 
@@ -35,7 +35,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        mail_message("Welcome to the PITCH APP","welcome_user",user.email,user=user)
+        # mail_message("Welcome to the PITCH APP","welcome_user",user.email,user=user)
         return redirect(url_for('auth.login'))
 
     title = "New Account"
