@@ -1,6 +1,6 @@
 import os
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://hamisi:hamisi@localhost/pitch'
+    
     SECRET_KEY = 'hamisi'
 
     #  email configurations
@@ -14,9 +14,10 @@ class ProdConfig(Config):
     pass
 
 class TestConfig(Config):
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://hamisi:hamisi@localhost/pitch_test'
 
 class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://hamisi:hamisi@localhost/pitch'
     DEBUG = True
     
 
