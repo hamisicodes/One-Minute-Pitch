@@ -13,3 +13,6 @@ Hamisi Ngao
 1. As a user, I would like to view the different categories.
 # Contact
 ngaohamisi@gmail.com
+# Technologies
+> PYTHON FLASK HTML CSS BOOTSTRAP
+
